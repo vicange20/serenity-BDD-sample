@@ -9,3 +9,14 @@ Feature: Google Search Demo
     Given I open the Google home page
     When I search Google for "Deva"
     Then the results I get are related to "Deva"
+
+
+  Scenario Outline: cautare batch manca-ti-asi
+    Given I open the Google home page
+    When I search Google for "<termenCautat>"
+    Then the results I get are related to "<termenCautat>"
+
+    Examples:
+   | termenCautat |
+   | manele |
+   | avioane |
