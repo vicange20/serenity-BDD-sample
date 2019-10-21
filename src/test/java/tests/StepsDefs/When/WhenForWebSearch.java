@@ -26,4 +26,10 @@ public class WhenForWebSearch {
     public void i_search_google_for_something(String expression) {
         searchSteps.searchForKeyword(expression);
     }
+
+    @When("^I see the dismiss button$")
+    public void i_see_the_dismiss_button(){
+       searchSteps.validationOfDismissedButton();
+    }
+
 }

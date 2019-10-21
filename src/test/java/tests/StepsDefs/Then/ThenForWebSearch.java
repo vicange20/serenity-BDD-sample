@@ -26,4 +26,10 @@ public class ThenForWebSearch {
     public void the_results_i_get_are_related_to_something(String keyword) {
         searchSteps.validateWeSearchedForKeyword(keyword);
     }
+
+    @Then("^I click on the dismiss button$")
+    public void i_click_on_the_dismiss_button() {
+        searchSteps.clickOnDismissButton();
+    }
+
 }

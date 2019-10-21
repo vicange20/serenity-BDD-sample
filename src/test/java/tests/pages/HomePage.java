@@ -23,7 +23,25 @@ public class HomePage extends WebDriverUtils {
     @FindBy(name="btnK")
     private WebElementFacade searchButton;
 
+    @FindBy(xpath="//a[contains(text(),'No, thanks')]")
+    private WebElementFacade dismissButton;
+
     public void searchForString(String searchItem){
         searchInput.sendKeys(searchItem + Keys.ENTER);
     }
+
+    public boolean iSeeTheDismissButton(){
+        boolean exitResult=false;
+        try{
+            Thread.sleep(1000);
+            exitResult=waitForElement(dismissButton).isDisplayed();
+        } catch(Exception e) {
+        }
+        return exitResult;
+    }
+
+    public void clickDismissButton(){
+         waitForElement(dismissButton).click();
+    }
+
 }

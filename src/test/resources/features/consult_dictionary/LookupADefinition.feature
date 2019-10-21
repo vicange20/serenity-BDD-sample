@@ -7,16 +7,7 @@ Feature: Google Search Demo
   @webdemo
   Scenario: Search Google for a keyword
     Given I open the Google home page
-    When I search Google for "Deva"
-    Then the results I get are related to "Deva"
+    When I see the dismiss button
+    Then I click on the dismiss button
 
 
-  Scenario Outline: cautare batch manca-ti-asi
-    Given I open the Google home page
-    When I search Google for "<termenCautat>"
-    Then the results I get are related to "<termenCautat>"
-
-    Examples:
-   | termenCautat |
-   | manele |
-   | avioane |

@@ -7,6 +7,7 @@ import tests.pages.HomePage;
 import net.thucydides.core.annotations.Step;
 import tests.pages.ResultsPage;
 
+import static junit.framework.TestCase.assertFalse;
 import static junit.framework.TestCase.assertTrue;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
@@ -51,4 +52,16 @@ public class EndUserSteps {
         } catch (Exception e){}
         assertTrue("Have we not searched for " + expression + "?", searchResultsPage.pageTitleContains(expression));
     }
+
+    @Step("iSeeTheDismissButton")
+    public void validationOfDismissedButton(){
+        assertTrue("Can't see the button", homePage.iSeeTheDismissButton());
+    }
+
+    @Step
+    public void clickOnDismissButton(){
+        homePage.clickDismissButton();
+        assertFalse("Able to see dismiss button", homePage.iSeeTheDismissButton());
+    }
+
 }
